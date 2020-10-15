@@ -5,9 +5,9 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "UbuntuMono Nerd Font:style=Medium:pixelsize=14:antialias=true:autohint=true";
+static char *font = "Ubuntu Mono Nerd Font:style=Medium:pixelsize=14:antialias=true:autohint=true";
 /* Spare fonts */
-static char *font2[] = {
+static char *font2[] = { "Source Han Sans JP:pixelsize=12",
 /*	"Inconsolata for Powerline:pixelsize=12:antialias=true:autohint=true", */
 /*	"Hack Nerd Font Mono:pixelsize=11:antialias=true:autohint=true", */
 };
@@ -51,7 +51,7 @@ int allowaltscreen = 1;
 
 /* allow certain non-interactive (insecure) window operations such as:
    setting the clipboard text */
-int allowwindowops = 0;
+int allowwindowops = 1;
 
 /*
  * draw latency range in ms - from new content/keypress/etc until drawing.
@@ -71,7 +71,7 @@ static unsigned int blinktimeout = 800;
 /*
  * thickness of underline and bar cursors
  */
-static unsigned int cursorthickness = 2;
+static unsigned int cursorthickness = 6;
 
 /*
  * bell volume. It must be a value between -100 and 100. Use 0 for disabling
@@ -130,7 +130,7 @@ static const char *colorname[] = {
  */
 unsigned int defaultfg = 7;
 unsigned int defaultbg = 0;
-static unsigned int defaultcs = 256;
+static unsigned int defaultcs = 13;
 static unsigned int defaultrcs = 257;
 unsigned int bg = 16, bgUnfocused = 16;
 
@@ -147,7 +147,7 @@ unsigned int bg = 16, bgUnfocused = 16;
  * 7: Blinking st cursor
  * 8: Steady st cursor
  */
-static unsigned int cursorstyle = 4;
+static unsigned int cursorstyle = 1;
 static Rune stcursor = 0x2603; /* snowman (U+2603) */
 
 /*
