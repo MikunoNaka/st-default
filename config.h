@@ -100,28 +100,30 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* bg opacity */
-float alpha = 0.95, alphaUnfocused = 0.95;
+float alpha = 1, alphaUnfocused = 1;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-	/* solarized dark */
-	"#073642",  /*  0: black    */
-	"#dc322f",  /*  1: red      */
-	"#859900",  /*  2: green    */
-	"#b58900",  /*  3: yellow   */
-	"#268bd2",  /*  4: blue     */
-	"#d33682",  /*  5: magenta  */
-	"#2aa198",  /*  6: cyan     */
-	"#eee8d5",  /*  7: white    */
-	"#002b36",  /*  8: brblack  */
-	"#cb4b16",  /*  9: brred    */
-	"#586e75",  /* 10: brgreen  */
-	"#657b83",  /* 11: bryellow */
-	"#839496",  /* 12: brblue   */
-	"#6c71c4",  /* 13: brmagenta*/
-	"#93a1a1",  /* 14: brcyan   */
-	"#fdf6e3",  /* 15: brwhite  */
-	"#232627", 
+[0] = "#000000", /* black   */
+[1] = "#ff5555", /* red     */
+[2] = "#50fa7b", /* green   */
+[3] = "#f1fa8c", /* yellow  */
+[4] = "#bd93f9", /* blue    */
+[5] = "#ff79c6", /* magenta */
+[6] = "#8be9fd", /* cyan    */
+[7] = "#bbbbbb", /* white   */
+
+[8]  = "#44475a", /* black   */
+[9]  = "#ff5555", /* red     */
+[10] = "#50fa7b", /* green   */
+[11] = "#f1fa8c", /* yellow  */
+[12] = "#bd93f9", /* blue    */
+[13] = "#ff79c6", /* magenta */
+[14] = "#8be9fd", /* cyan    */
+[15] = "#ffffff", /* white   */
+
+[256] = "#282a36", /* background */
+[257] = "#f8f8f2", /* foreground */
 };
 
 
@@ -129,11 +131,11 @@ static const char *colorname[] = {
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 7;
-unsigned int defaultbg = 16;
-static unsigned int defaultcs = 13;
+unsigned int defaultfg = 257;
+unsigned int defaultbg = 256;
+static unsigned int defaultcs = 257;
 static unsigned int defaultrcs = 257;
-unsigned int bg = 8, bgUnfocused = 0;
+unsigned int bg = 256, bgUnfocused = 256;
 
 /*
  * https://invisible-island.net/xterm/ctlseqs/ctlseqs.html#h4-Functions-using-CSI-_-ordered-by-the-final-character-lparen-s-rparen:CSI-Ps-SP-q.1D81
